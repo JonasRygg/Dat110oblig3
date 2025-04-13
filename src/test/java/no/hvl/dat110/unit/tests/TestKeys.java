@@ -73,7 +73,7 @@ class TestKeys {
 		
 		// start processes . Processes will form a ring
 		SetUp setup = SetUp.getInstance();
-		if(!setup.isStarted()) {
+		if(setup.isStarted()) {
 			setup.startProcesses();
 			Thread.sleep(12000); 			// let the ring stabilize before distributing files
 			// distribute the files to the ring

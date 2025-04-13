@@ -56,16 +56,16 @@ public class SetUp {
 		NodeInterface p1 = Util.getProcessStub(node1, 9091);	 						// Look up the registry for the remote stub for process1
 		
 		FileManager fm = new FileManager(p1, Util.numReplicas);							// get the filemanager
-		
-		for(int i=0; i<files.length; i++) {												// iterate over the files and distribute them to the running nodes
-			fm.setFilepath(path+files[i]);
-			fm.readFile();
-			fm.distributeReplicastoPeers();												// distribute the replicas to active peers
-		}
+
+        for (String file : files) {                                                // iterate over the files and distribute them to the running nodes
+            fm.setFilepath(path + file);
+            fm.readFile();
+            fm.distributeReplicastoPeers();                                                // distribute the replicas to active peers
+        }
 	}
 
 	public boolean isStarted() {
-		return started;
+		return !started;
 	}
 	
 //	public static void main(String[] args) throws InterruptedException, NoSuchAlgorithmException, IOException {
