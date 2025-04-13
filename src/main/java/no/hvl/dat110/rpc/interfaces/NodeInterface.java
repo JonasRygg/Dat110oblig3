@@ -69,6 +69,6 @@ public interface NodeInterface extends Remote {
 	
 	public void onMutexAcknowledgementReceived(Message message) throws RemoteException;
 	
-	public void onMutexRequestReceived(Message message) throws RemoteException;
+	public Message onMutexRequestReceived(Message message) throws RemoteException;
 	
 }
